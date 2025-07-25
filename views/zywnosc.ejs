@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak schudnąć</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <nav id="top-nav">
+            <% if (!user || !loggedin) { %>
+                <a class="menu" href="/login">Zaloguj</a>
+                <a class="menu" href="/register">Zarejestruj</a>
+            <% } else { %>
+                <a class="menu" id="logout-button" href="#">Wyloguj</a>
+                <a class="menu" href="/profil">Profil</a>
+            <% } %>
+            <a class="menu" href="/onas">O nas</a>
+        </nav>
+        
+        <header>
+            <img src="/img/food.jpg">
+        </header>
+
+        <nav>
+            <a class="menu active" href="/">Strona główna</a>
+            <a class="menu" href="/sport">Sport</a>
+            <a class="menu" href="/zywnosc">Zdrowa żywność</a>
+            <a class="menu" href="/woda">Spożycie wody</a>
+            <a class="menu" href="/sen">Sen i regeneracja</a>
+            <a class="menu" href="/kalkulator">Kalkulator zdrowia</a>
+        </nav>
+
+        <section>
+            <article>
+                <h1>Zdrowe Odchudzanie: Zdrowe Odżywianie</h1>
+                <p>Zdrowa dieta to klucz do dobrego samopoczucia i zdrowia. Przestrzeganie zasad zrównoważonego odżywiania jest łatwiejsze, gdy używamy piramidy żywieniowej jako przewodnika.</p>
+                <h2>Piramida Żywieniowa</h2>
+                <img src="../img/pyramid.jpg" alt="Piramida Żywieniowa" class="food-pyramid">
+                <ul class="food-list">
+                    <li><a href="#" class="toggle-description" data-target="description-podstawa"><b><span class="beneficial">Podstawa:</span></b> Produkty zbożowe, takie jak chleb, ryż, makaron</a></li>
+                    <p id="description-podstawa" class="description" style="display: none;">Produkty zbożowe są bogate w węglowodany, które dostarczają energii niezbędnej do codziennego funkcjonowania. Są również źródłem błonnika, który wspiera trawienie i pomaga w utrzymaniu zdrowej wagi. Spożywanie pełnoziarnistych produktów zbożowych może także zmniejszyć ryzyko wystąpienia chorób serca, cukrzycy typu 2 i niektórych rodzajów raka. Przykłady zdrowych produktów zbożowych to pełnoziarnisty chleb, brązowy ryż, owsianka i makaron pełnoziarnisty.</p>
+                    <li><a href="#" class="toggle-description" data-target="description-warzywa"><b><span class="beneficial">Warzywa i owoce:</span></b> Bogate w witaminy i minerały</a></li>
+                    <p id="description-warzywa" class="description" style="display: none;">Warzywa i owoce są pełne witamin, minerałów i błonnika. Wspierają układ odpornościowy, poprawiają trawienie i chronią przed chorobami przewlekłymi. Regularne spożywanie warzyw i owoców może również pomóc w utrzymaniu zdrowej wagi, ponieważ są niskokaloryczne i sycące. Warzywa i owoce o różnych kolorach dostarczają różnych korzyści zdrowotnych, dlatego ważne jest, aby spożywać różnorodne produkty. Na przykład, zielone warzywa liściaste są bogate w kwas foliowy, podczas gdy pomarańczowe owoce i warzywa są doskonałym źródłem witaminy C i beta-karotenu.</p>
+                    <li><a href="#" class="toggle-description" data-target="description-nabial"><b><span class="beneficial">Nabiał:</span></b> Mleko, jogurty, sery</a></li>
+                    <p id="description-nabial" class="description" style="display: none;">Nabiał dostarcza wapnia, białka i witaminy D, które są kluczowe dla zdrowia kości i zębów. Spożywanie odpowiedniej ilości nabiału może pomóc w zapobieganiu osteoporozie i utrzymaniu zdrowych mięśni. Fermentowane produkty mleczne, takie jak jogurty, zawierają probiotyki, które wspierają zdrowie układu pokarmowego. Warto wybierać niskotłuszczowe lub beztłuszczowe produkty mleczne, aby zredukować spożycie nasyconych tłuszczów i kalorii.</p>
+                    <li><a href="#" class="toggle-description" data-target="description-bialko"><b><span class="beneficial">Białko:</span></b> Mięso, ryby, jaja, rośliny strączkowe</a></li>
+                    <p id="description-bialko" class="description" style="display: none;">Białko jest niezbędne dla budowy i naprawy tkanek, a także dla produkcji enzymów i hormonów. Rośliny strączkowe, ryby i chude mięso to świetne źródła białka. Spożywanie różnorodnych źródeł białka może zapewnić dostarczenie wszystkich niezbędnych aminokwasów. Ryby, zwłaszcza tłuste ryby, takie jak łosoś i makrela, są również bogate w kwasy tłuszczowe omega-3, które wspierają zdrowie serca i mózgu. Rośliny strączkowe, takie jak fasola i soczewica, dostarczają błonnika i są doskonałą opcją dla wegetarian.</p>
+                    <li><a href="#" class="toggle-description" data-target="description-slodycze"><b><span class="harmful">Słodycze:</span></b> Sporadycznie, w małych ilościach</a></li>
+                    <p id="description-slodycze" class="description" style="display: none;">Słodycze powinny być spożywane z umiarem. Nadmiar cukru może prowadzić do problemów zdrowotnych, takich jak otyłość, cukrzyca typu 2 i choroby serca. Spożywanie dużej ilości cukru może również wpływać negatywnie na zdrowie zębów, prowadząc do próchnicy. Ważne jest, aby wybierać zdrowsze alternatywy dla słodyczy, takie jak owoce, które dostarczają naturalnych cukrów oraz dodatkowych składników odżywczych. Jeśli spożywasz słodycze, staraj się ograniczać ich ilość i częstotliwość spożycia.</p>
+                    <li><a href="#" class="toggle-description" data-target="description-tluszcze"><b><span class="beneficial">Tłuszcze:</span></b> Oleje roślinne, orzechy, nasiona</a></li>
+                    <p id="description-tluszcze" class="description" style="display: none;" class="harmful">Tłuszcze są ważnym źródłem energii i niezbędnych kwasów tłuszczowych. Zdrowe tłuszcze, takie jak te zawarte w olejach roślinnych, orzechach i nasionach, wspierają funkcje mózgu i zdrowie serca. Spożywanie tłuszczów nienasyconych, takich jak olej oliwkowy, awokado i tłuste ryby, może pomóc w obniżeniu poziomu cholesterolu LDL (złego cholesterolu) i zmniejszeniu ryzyka chorób serca. Unikanie tłuszczów trans i ograniczanie spożycia tłuszczów nasyconych jest kluczowe dla utrzymania zdrowia serca.</p>
+                </ul>
+            </article>
+        </section>
+
+        <footer>
+            <div id="stopka">
+                <div class="one">
+                    <h2>Skontaktuj się z nami</h2>
+                    <p>
+                        Chętnie odpowiemy na Twoje pytania</br>
+                        oraz pomożemy Ci wybrać</br>
+                        odpowiednią dietę.
+                    </p>
+                </div>
+
+                <div class="two">
+                    <h4>Zadzwoń:</h4>
+                    <p>
+                        <a href="tel:+48 513 154 523">+48 513 154 523</a>
+                    </p>
+
+                    <p>
+                        <a href="tel:+22 216 31 12">+22 216 31 12</a>
+                    </p>
+
+                    <h4>Napisz:</h4>
+                    <p>
+                        <a link href="/form" target="_blank">jakschudnac.help@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="three">
+                    <a link href="https://www.google.com/maps/dir//Okopowa+59,+01-043+Warszawa/@52.2503304,20.896886,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x471ecbba9270ad2b:0x2dd568e535a4934!2m2!1d20.9792862!2d52.2503591?entry=ttu" target="_blank">Okopowa 59</a>
+                    <p>PON-PT: 8:00 - 16:00</p>
+                    <p>SOBOTA: 8:00 - 14:00</p>
+                </div>                
+            </div>
+            <p class="prawa">&copy; 2024 Strona Jak schudnąć. Wszelkie prawa zastrzeżone.</p>            
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const toggles = document.querySelectorAll('.toggle-description');
+
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = toggle.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    if (targetElement.style.display === "none" || targetElement.style.display === "") {
+                        targetElement.style.display = "block";
+                    } else {
+                        targetElement.style.display = "none";
+                    }
+                }
+            });
+        });
+        });
+        document.getElementById('logout-button').addEventListener('click', function() {
+            fetch('/logout', { method: 'POST' })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    if (data === 'Proszę się zalogować przed wylogowaniem') {
+                        alert('Proszę się zalogować przed wylogowaniem');
+                    } else {
+                        window.location.href = '/';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Wystąpił błąd podczas wylogowywania');
+                });
+        });
+    </script>
+</body>
+</html>

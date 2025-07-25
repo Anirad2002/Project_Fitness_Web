@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Logowanie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2887a7;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .container button:hover {
+            background-color: #1c6f8b;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #2887a7;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .password-container input {
+            padding-right: 40px;
+        }
+        .password-icon {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+            width: 8%;
+        }
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .forgot-password a {
+            color: #2887a7;
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Logowanie</h2>
+        <form action="/login" method="POST">
+            <label for="username">Nazwa użytkownika:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Hasło:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>
+                <img id="togglePassword" class="password-icon" src="https://img.icons8.com/ios-glyphs/30/000000/invisible.png" alt="Pokaż/Ukryj Hasło">
+            </div>
+            <button type="submit">Zaloguj się</button>
+        </form>
+        <div class="forgot-password">
+            <a href="/request-password-reset">Zapomniałem hasła</a>
+        </div>
+        <a href="/" class="back-link">Powrót do strony głównej</a>
+    </div>
+
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            this.src = type === 'password' ? 'https://img.icons8.com/ios-glyphs/30/000000/invisible.png' : 'https://img.icons8.com/ios-glyphs/30/000000/visible.png';
+        });
+    </script>
+</body>
+</html>

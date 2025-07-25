@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak schudnąć</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <nav id="top-nav">
+            <% if (!user || !loggedin) { %>
+                <a class="menu" href="/login">Zaloguj</a>
+                <a class="menu" href="/register">Zarejestruj</a>
+            <% } else { %>
+                <a class="menu" id="logout-button" href="#">Wyloguj</a>
+                <a class="menu" href="/profil">Profil</a>
+            <% } %>
+            <a class="menu" href="/onas">O nas</a>
+        </nav>
+
+        <header>
+            <img src="/img/onas.jpg">
+        </header>
+
+        <nav>
+            <a class="menu active" href="/">Strona główna</a>
+            <a class="menu" href="/sport">Sport</a>
+            <a class="menu" href="/zywnosc">Zdrowa żywność</a>
+            <a class="menu" href="/woda">Spożycie wody</a>
+            <a class="menu" href="/sen">Sen i regeneracja</a>
+            <a class="menu" href="/kalkulator">Kalkulator zdrowia</a>
+        </nav>
+
+        <section>
+            <article>                   
+                <h1>Zdrowe Odchudzanie: Zdrowi wykonawcy</h1>
+                <p>
+                    Witaj na stronie "Jak Schudnąć?" – miejscu stworzonym z pasją do zdrowego stylu życia i odchudzania. Nasza misja to nie tylko pomoc w osiągnięciu wymarzonej sylwetki, ale także podniesienie Twojego ogólnego samopoczucia.
+                </p>
+                <p>
+                    Nasz zespół składa się z doświadczonych trenerów, dietetyków i specjalistów od zdrowego snu, gotowych podzielić się swoją wiedzą i doświadczeniem. Na stronie "Jak Schudnąć?" znajdziesz cenne porady, sprawdzone metody oraz inspirujące historie sukcesów.
+                </p>
+                <p>
+                    Niezależnie od Twoich celów odchudzających, tutaj znajdziesz wsparcie oraz narzędzia potrzebne do skutecznego planowania diety, treningów oraz regeneracyjnego snu. Chcemy inspirować i motywować Cię do zdrowszego życia, krok po kroku.
+                </p>
+            </article>
+            
+            <footer>
+                <div id="stopka">
+                    <div class="one">
+                        <h2>Skontaktuj się z nami</h2>
+                        <p>
+                            Chętnie odpowiemy na Twoje pytania</br>
+                            oraz pomożemy Ci wybrać</br>
+                            odpowiednią dietę.
+                        </p>
+                    </div>
+    
+                    <div class="two">
+                        <h4>Zadzwoń:</h4>
+                        <p>
+                            <a href="tel:+48 513 154 523">+48 513 154 523</a>
+                        </p>
+    
+                        <p>
+                            <a href="tel:+22 216 31 12">+22 216 31 12</a>
+                        </p>
+    
+                        <h4>Napisz:</h4>
+                        <p>
+                            <a link href="/form" target="_blank">jakschudnac.help@gmail.com</a>
+                        </p>
+                    </div>
+    
+                    <div class="three">
+                        <a link href="https://www.google.com/maps/dir//Okopowa+59,+01-043+Warszawa/@52.2503304,20.896886,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x471ecbba9270ad2b:0x2dd568e535a4934!2m2!1d20.9792862!2d52.2503591?entry=ttu" target="_blank">Okopowa 59</a>
+                        <p>PON-PT: 8:00 - 16:00</p>
+                        <p>SOBOTA: 8:00 - 14:00</p>
+                    </div>                
+                </div>
+                <p class="prawa">&copy; 2024 Strona Jak schudnąć. Wszelkie prawa zastrzeżone.</p>            
+            </footer>
+    </div>
+    <script>
+        document.getElementById('logout-button').addEventListener('click', function() {
+            fetch('/logout', { method: 'POST' })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    if (data === 'Proszę się zalogować przed wylogowaniem') {
+                        alert('Proszę się zalogować przed wylogowaniem');
+                    } else {
+                        window.location.href = '/';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Wystąpił błąd podczas wylogowywania');
+                });
+        });
+    </script>
+</body>
+</html>

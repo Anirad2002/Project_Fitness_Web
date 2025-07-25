@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak schudnąć</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+.lista-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sport-description img {
+    max-width: 100%;
+    height: auto;
+}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <nav id="top-nav">
+            <% if (!user || !loggedin) { %>
+                <a class="menu" href="/login">Zaloguj</a>
+                <a class="menu" href="/register">Zarejestruj</a>
+            <% } else { %>
+                <a class="menu" id="logout-button" href="#">Wyloguj</a>
+                <a class="menu" href="/profil">Profil</a>
+            <% } %>
+            <a class="menu" href="/onas">O nas</a>
+        </nav>
+        
+        <header>
+            <img src="/img/sport.jpg">
+        </header>
+
+        <nav>
+            <a class="menu active" href="/">Strona główna</a>
+            <a class="menu" href="/sport">Sport</a>
+            <a class="menu" href="/zywnosc">Zdrowa żywność</a>
+            <a class="menu" href="/woda">Spożycie wody</a>
+            <a class="menu" href="/sen">Sen i regeneracja</a>
+            <a class="menu" href="/kalkulator">Kalkulator zdrowia</a>
+        </nav>
+
+        <section>
+            <article>                   
+                <h1>Zdrowe Odchudzanie: Ruchowe atrakcje</h1>
+                <p>
+                    Sport to kluczowy element zdrowego stylu życia. </br>
+                    Regularna aktywność fizyczna nie tylko poprawia kondycję fizyczną, ale także wpływa pozytywnie na samopoczucie i zdrowie psychiczne. </br>
+                    Niezależnie od preferowanej dyscypliny czy poziomu zaawansowania, każdy ruch to krok w stronę lepszej formy i energii.</br>
+                    <b>Zacznij już dziś i poczuj różnicę!</b>
+                </p>
+            </article>
+        </section>
+
+        <div class="gif">
+            <img src="/img/ruch.gif">
+        </div>
+
+        <div class="lista">
+            <button class="lista-btn" onclick="toggleLista()">Wybierz sport</button>
+            <div class="lista-content">
+                <a href="javascript:void(0)" onclick="showInfo('Pływanie')">Pływanie</a>
+                <a href="javascript:void(0)" onclick="showInfo('Bieganie')">Bieganie</a>
+                <a href="javascript:void(0)" onclick="showInfo('Joga')">Joga</a>
+                <a href="javascript:void(0)" onclick="showInfo('Zumba')">Zumba</a>
+                <a href="javascript:void(0)" onclick="showInfo('Rower')">Rower</a>
+                <a href="javascript:void(0)" onclick="showInfo('Taniec')">Taniec</a>
+                <a href="javascript:void(0)" onclick="showInfo('Sporty Zespolowe')">Sporty Zespołowe</a>
+            </div>
+        </div>
+
+        <div id="sport-info"></div>
+
+        <script>
+            var img = {
+                'Pływanie': '/img/plywanie.gif',
+                'Bieganie': '/img/bieganie.jpg',
+                'Joga': '/img/joga.gif',
+                'Zumba': '/img/zumba.jpeg',
+                'Rower': '/img/rower.jpg',
+                'Taniec': '/img/taniec.jpg',
+                'Sporty Zespolowe': '/img/sporty.jpg'
+            };
+
+            function toggleLista() {
+                var lista = document.querySelector('.lista');
+                lista.classList.toggle('active');
+            }
+
+            function showInfo(sport) {
+                var infoArea = document.getElementById('sport-info');
+                var info = '';
+
+                if (sport === 'Pływanie') {
+                    info = 'Pływanie to doskonały sport, który angażuje wiele mięśni ciała jednocześnie. Regularne pływanie pomaga spalać kalorie, wzmacnia mięśnie, poprawia wydolność serca i płuc oraz kształtuje sylwetkę.';
+                } else if (sport === 'Bieganie') {
+                    info = 'Bieganie jest skutecznym sposobem na utratę zbędnych kilogramów i utrzymanie smukłej sylwetki. Regularne bieganie pozwala spalić wiele kalorii, poprawia wydolność serca i wzmacnia mięśnie nóg.';
+                } else if (sport === 'Joga') {
+                    info = 'Joga to nie tylko forma aktywności fizycznej, ale również praktyka mindfulness, która pomaga w redukcji stresu i poprawie samopoczucia. Ćwiczenia jogi angażują różne partie mięśniowe, wzmacniają ciało i poprawiają elastyczność.';
+                } else if (sport === 'Zumba') {
+                    info = 'Zumba to energetyczna forma ćwiczeń oparta na tańcu, która pozwala spalić wiele kalorii i poprawić kondycję. Tańce wykonywane podczas zajęć zumbowych angażują całe ciało, zapewniając efektywny trening aerobowy.';
+                } else if (sport === 'Rower') {
+                    info = 'Rower to doskonała forma aktywności fizycznej, która nie tylko pozwala na utrzymanie smukłej sylwetki, ale również wzmacnia mięśnie nóg i poprawia wydolność serca i płuc.';
+                } else if (sport === 'Taniec') {
+                    info = 'Taniec to nie tylko przyjemna forma spędzania czasu, ale również skuteczny sposób na utrzymanie smukłej sylwetki. Różne style tańca angażują różne partie mięśni, zapewniając kompleksowy trening fizyczny.';
+                } else if (sport === 'Sporty Zespolowe') {
+                    info = 'Gry takie jak piłka nożna, koszykówka czy siatkówka są świetnym sposobem na spalanie kalorii, poprawę kondycji i jednoczesne czerpanie radości z aktywności fizycznej.';
+                }
+
+                var imgSrc = img[sport] || '';
+                infoArea.innerHTML = '<div class="sport-description"><h3>' + sport + '</h3><p>' + info + '</p><img id="sport-img" src="' + imgSrc + '" alt="Obrazek sportu"></div>';
+            }
+
+            document.getElementById('logout-button').addEventListener('click', function() {
+                fetch('/logout', { method: 'POST' })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        if (data === 'Proszę się zalogować przed wylogowaniem') {
+                            alert('Proszę się zalogować przed wylogowaniem');
+                        } else {
+                            window.location.href = '/';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Wystąpił błąd podczas wylogowywania');
+                    });
+            });
+        </script>
+
+        <div class="tabela-kalorie">
+            <h2>Spalone Kalorie dla Różnych Sportów</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sport</th>
+                        <th>Kalorie spalone (15 min)</th>
+                        <th>Kalorie spalone (30 min)</th>
+                        <th>Kalorie spalone (45 min)</th>
+                        <th>Kalorie spalone (60 min)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bieganie (8 km/h)</td><td>150</td><td>300</td><td>450</td><td>600</td></tr>
+                    <tr><td>Chodzenie (5 km/h)</td><td>75</td><td>150</td><td>225</td><td>300</td></tr>
+                    <tr><td>Jazda na rowerze (20 km/h)</td><td>125</td><td>250</td><td>375</td><td>500</td></tr>
+                    <tr><td>Pływanie (rekreacyjne)</td><td>100</td><td>200</td><td>300</td><td>400</td></tr>
+                    <tr><td>Trening siłowy</td><td>90</td><td>180</td><td>270</td><td>360</td></tr>
+                    <tr><td>HIIT</td><td>200</td><td>400</td><td>600</td><td>800</td></tr>
+                    <tr><td>Aerobik</td><td>120</td><td>240</td><td>360</td><td>480</td></tr>
+                    <tr><td>Zumba</td><td>135</td><td>270</td><td>405</td><td>540</td></tr>
+                    <tr><td>Joga</td><td>60</td><td>120</td><td>180</td><td>240</td></tr>
+                    <tr><td>Pilates</td><td>70</td><td>140</td><td>210</td><td>280</td></tr>
+                    <tr><td>Skakanie na skakance</td><td>185</td><td>370</td><td>555</td><td>740</td></tr>
+                    <tr><td>Piłka nożna</td><td>140</td><td>280</td><td>420</td><td>560</td></tr>
+                    <tr><td>Koszykówka</td><td>150</td><td>300</td><td>450</td><td>600</td></tr>
+                    <tr><td>Siatkówka</td><td>60</td><td>120</td><td>180</td><td>240</td></tr>
+                    <tr><td>Tenis</td><td>150</td><td>300</td><td>450</td><td>600</td></tr>
+                    <tr><td>Squash</td><td>210</td><td>420</td><td>630</td><td>840</td></tr>
+                    <tr><td>Boks</td><td>180</td><td>360</td><td>540</td><td>720</td></tr>
+                    <tr><td>Wspinaczka</td><td>180</td><td>360</td><td>540</td><td>720</td></tr>
+                    <tr><td>Narciarstwo biegowe</td><td>150</td><td>300</td><td>450</td><td>600</td></tr>
+                    <tr><td>Narciarstwo zjazdowe</td><td>120</td><td>240</td><td>360</td><td>480</td></tr>
+                    <tr><td>Łyżwiarstwo</td><td>130</td><td>260</td><td>390</td><td>520</td></tr>
+                    <tr><td>Kajakarstwo</td><td>75</td><td>150</td><td>225</td><td>300</td></tr>
+                    <tr><td>Jazda konna</td><td>75</td><td>150</td><td>225</td><td>300</td></tr>
+                    <tr><td>Tańce towarzyskie</td><td>90</td><td>180</td><td>270</td><td>360</td></tr>
+                    <tr><td>Hokej na lodzie</td><td>180</td><td>360</td><td>540</td><td>720</td></tr>
+                    <tr><td>Rugby</td><td>190</td><td>380</td><td>570</td><td>760</td></tr>
+                    <tr><td>Badminton</td><td>110</td><td>220</td><td>330</td><td>440</td></tr>
+                    <tr><td>Frisbee</td><td>60</td><td>120</td><td>180</td><td>240</td></tr>
+                    <tr><td>Golf (chodzenie)</td><td>75</td><td>150</td><td>225</td><td>300</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <div id="stopka">
+                <div class="one">
+                    <h2>Skontaktuj się z nami</h2>
+                    <p>
+                        Chętnie odpowiemy na Twoje pytania</br>
+                        oraz pomożemy Ci wybrać</br>
+                        odpowiednią dietę.
+                    </p>
+                </div>
+
+                <div class="two">
+                    <h4>Zadzwoń:</h4>
+                    <p>
+                        <a href="tel:+48 513 154 523">+48 513 154 523</a>
+                    </p>
+
+                    <p>
+                        <a href="tel:+22 216 31 12">+22 216 31 12</a>
+                    </p>
+
+                    <h4>Napisz:</h4>
+                    <p>
+                        <a link href="/form" target="_blank">jakschudnac.help@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="three">
+                    <a link href="https://www.google.com/maps/dir//Okopowa+59,+01-043+Warszawa/@52.2503304,20.896886,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x471ecbba9270ad2b:0x2dd568e535a4934!2m2!1d20.9792862!2d52.2503591?entry=ttu" target="_blank">Okopowa 59</a>
+                    <p>PON-PT: 8:00 - 16:00</p>
+                    <p>SOBOTA: 8:00 - 14:00</p>
+                </div>                
+            </div>
+            <p class="prawa">&copy; 2024 Strona Jak schudnąć. Wszelkie prawa zastrzeżone.</p>            
+        </footer>
+    </div>
+
+</body>
+</html>

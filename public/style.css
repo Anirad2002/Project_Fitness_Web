@@ -1,0 +1,307 @@
+/*główna*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image:url(img/zmiana.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#wrapper{
+    max-width: 1000px;
+    margin:0 auto;
+    background-color: #D6D7E5;
+    box-shadow: 0px 10px 8px 5px;
+    border-radius: 7px;   
+}
+
+#wrapper{
+    text-align: center;
+}
+
+header img{
+    width:100%;
+    display: block;
+    height: 250px;
+}
+
+nav, footer{
+    background-color: #7e85f3;
+}
+
+article{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#thinking{
+    float: left;
+    width:30%;
+    border-radius: 50% 30% 50% 30%;
+    border: 2px solid rgb(209, 205, 205);
+}
+
+article h1{
+    font-size: 30px;
+    text-align: center;
+    margin: 0 10% 20px;
+    padding-bottom: 15px;
+    border-bottom:2px solid violet;
+}
+
+article p{
+    text-align:center;
+}
+
+#second p{
+    text-align: center;
+}
+
+a.menu{
+    display: inline-block;
+    width:15%;
+    padding:5px 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+a.menu:hover{
+    font-size:16px;
+    box-shadow: 0px 8px 10px 5px;
+    color:white;
+    border-radius: 7px;
+    border-style:solid;
+}
+
+#stopka{
+    padding-bottom:10%;
+}
+
+footer{
+    border-radius: 6px;
+}
+
+/*sport*/
+
+.gif{
+    width:100%;
+    display: block;
+    text-align: center;
+    background-color: white;
+    border-radius: 10%;
+}
+
+.lista {
+    position: relative;
+    display: inline-block;
+}
+
+.lista-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-width: 300px;
+    overflow-y: auto;
+}
+
+.lista-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+}
+
+.lista-content a:hover {
+    background-color: #4a97e8;
+}
+
+.lista.active .lista-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+#sport-info {
+    margin-top: 20px;
+    height: 400px;
+}
+
+.sport-description {
+    margin-left: 220px;
+}
+  
+.lista-btn{
+    display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+}
+  
+.lista-btn:hover{
+    background-color: #0056b3;
+}
+
+#sport-img {
+    width:100%;
+    display: block;
+    height: 250px;
+    border-radius: 5px;
+}
+
+/*kalkulator*/
+
+.one{
+    float: left;
+    width:40%;
+}
+
+.two{
+    float: left;
+    width:35%;
+}
+
+.one p{
+    font-size: 20px;
+    padding:2%;
+}
+
+.two p{
+    padding:3%;
+}
+
+.three p{
+    padding:1%;
+}
+
+.three a{
+    text-decoration: none;
+}
+
+h2{
+    color:#D2A469;
+}
+
+.prawa{
+    text-align: center;
+    font-size: 20px;
+}
+
+h2{
+    text-align: center;
+}
+
+.bg-calc{
+    background-color: #D6D7E5;
+}
+
+
+.kalkulator{
+    text-align: center;
+    padding: 20px;
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 90% 50% 90% 50%;
+}
+
+button{
+    font-size: 15px;
+}
+
+button:hover{
+    background-color: #7e85f3;
+}
+
+#activityLevel{
+    width:30%;
+}
+
+/* zywnosc */
+.food-pyramid {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.food-list {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.food-list ul {
+    list-style-type: disc;
+    margin-left: 30px;
+    overflow: hidden;
+}
+
+.food-list li {
+    margin-bottom: 10px;
+}
+
+.food-list a {
+    color: #67097dc2;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.food-list a:hover {
+    text-decoration: underline;
+}
+
+.description {
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #eef;
+    border: 1px solid #ccd;
+    border-radius: 5px;
+    display: none;
+}
+
+.beneficial {
+    color: green;
+}
+
+.harmful {
+    color: red;
+}
+
+/* Sen */
+.sen-article {
+    margin-bottom: 30px;
+}
+
+.sen-article ul {
+    list-style-type: disc;
+    margin-left: 30px;
+    overflow: hidden;
+}
+
+.sen-article li {
+    margin-top: 15px;
+}
